@@ -40,8 +40,47 @@ ProxLink is a remote server management solution for Proxmox, enabling seamless a
              Outgoing: wlp2s0
 ```
 
-## 📌 Step 1: Configure Wi-Fi on Proxmox
-### 1. **Edit the Network Configuration**
+# ProxLink - Proxmox Remote Server
+
+ProxLink is a remote server setup for **Proxmox VE**, optimized for secure and efficient virtualization. This guide provides details on the hardware configuration and network setup to ensure seamless remote access and performance.
+
+---
+
+## 🖥️ Hardware Configuration
+
+#### **1️⃣ Beelink SER5 Pro Mini PC**
+- **Processor**: AMD Ryzen 7 5800H (8C/16T, Up to 4.4GHz)
+- **RAM**: 32GB DDR4
+- **Storage**: 1TB NVMe SSD
+- **Graphics**: Integrated AMD Radeon (Supports 4K@60Hz Output)
+- **Networking**:
+  - **WiFi 6** (Primary connection)
+  - **Bluetooth 5.2**
+  - **Ethernet via WiFi Extender**
+- **Operating System**: Proxmox VE 8.x (Replaces Windows 11 Pro)
+
+#### **2️⃣ WiFi Extender (Ethernet Connection)**
+- Extends network coverage for Proxmox.
+- Provides an **Ethernet bridge** for better stability.
+
+#### **3️⃣ Cooling System (Optional)**
+- If available, an external cooling fan or additional thermal management can be used to maintain performance under high loads.
+
+## ⚙️ Software & Networking Setup
+
+### **1️⃣ Install Proxmox VE**
+1. Download **Proxmox VE** ISO: [Proxmox Official Site](https://www.proxmox.com/en/downloads)
+2. Create a bootable USB using **Rufus** or **Balena Etcher**.
+3. Boot from USB and install **Proxmox VE**.
+
+### **2️⃣ Configure Network**
+Edit the network configuration file:
+```bash
+nano /etc/network/interfaces
+```
+
+## Configuration
+### Step 1: Configure Wi-Fi on Proxmox
 Modify the Proxmox network settings to use **Wi-Fi only**.
 
 ```bash
